@@ -37,10 +37,10 @@ $ docker build --rm -t lektor-docker-alpine:latest .
 
 ```
 $ cd my-lektor-site
-$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest help
-$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest quickstart --name blog --path /app/blog
+$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest lektor --help
+$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest lektor quickstart --name blog --path /app/blog
 $ cd blog
-$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest serve -h 0.0.0.0
+$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest lektor serve -h 0.0.0.0
 ```
 
 # Troubleshooting
