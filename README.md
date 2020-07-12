@@ -28,12 +28,12 @@ when applicable:
 # Building
 
 ```
-$ git clone https://github.com/koitsu/lektor-docker-alpine
+$ git clone https://github.com/koitsu/lektor-docker-alpine.git
 $ cd lektor-docker-alpine
 $ docker build --rm -t lektor-docker-alpine:latest .
 ```
 
-# Usage
+# Usage Examples
 
 ```
 $ cd my-lektor-site
@@ -41,11 +41,7 @@ $ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:lat
 $ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest lektor quickstart --name blog --path /app/blog
 $ cd blog
 $ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app -p 5000:5000 lektor-docker-alpine:latest lektor serve -h 0.0.0.0
-```
-
-# Troubleshooting
-
-```
+^C
 $ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest bash
 ```
 
