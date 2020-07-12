@@ -7,8 +7,8 @@ I haven't taken the time to figure out how to get this onto DockerHub.  Sorry.
 
 ## Details
 
-* Base image: [python:3.8.3-alpine3.12](https://hub.docker.com/_/python)
 * Lektor version: 3.1.2 via PyPI
+* Base image: [python:3.8.3-alpine3.12](https://hub.docker.com/_/python)
 * Container directory: `/app`
 * Container UID/GID: `1000:1000`
 * Container exposed TCP port: 5000
