@@ -4,13 +4,16 @@ ARG LEKTOR_VERSION=3.1.2
 ARG LEKTOR_UID=1000
 ARG LEKTOR_GID=1000
 
+ENV PIP_NO_CACHE_DIR=1
+
 RUN set -e -x \
 && addgroup -g $LEKTOR_UID -S lektor \
 && adduser -u $LEKTOR_GID -D -S -G lektor lektor \
-&& apk --update --no-cache add build-base python3-dev libffi-dev openssl-dev bash curl git wget \
+&& apk update \
+&& apk add build-base python3-dev libffi-dev openssl-dev bash curl git wget \
 && pip3 install lektor==$LEKTOR_VERSION \
-&& apk --no-cache del build-base python3-dev libffi-dev openssl-dev \
-&& rm -fr /root/.cache
+&& apk del --purge build-base python3-dev libffi-dev openssl-dev \
+&& rm -fr /var/cache/apk/*
 
 USER lektor:lektor
 WORKDIR /app
