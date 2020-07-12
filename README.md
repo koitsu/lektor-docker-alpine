@@ -1,4 +1,4 @@
-# lektor-docker
+# lektor-docker-alpine
 
 This is a repository containing a `Dockerfile` that can be used to build the
 static site generator [Lektor](https://github.com/lektor/lektor).
@@ -28,24 +28,24 @@ when applicable:
 # Building
 
 ```
-$ git clone https://github.com/koitsu/lektor-docker
-$ cd lektor-docker
-$ docker build --rm -t lektor-docker:latest .
+$ git clone https://github.com/koitsu/lektor-docker-alpine
+$ cd lektor-docker-alpine
+$ docker build --rm -t lektor-docker-alpine:latest .
 ```
 
 # Usage
 
 ```
 $ cd my-lektor-site
-$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker:latest help
-$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker:latest quickstart --name blog --path /app/blog
+$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest help
+$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest quickstart --name blog --path /app/blog
 $ cd blog
-$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker:latest serve -h 0.0.0.0
+$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest serve -h 0.0.0.0
 ```
 
 # Troubleshooting
 
 ```
-$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker:latest bash
+$ docker run --rm -it -u $(id -u):$(id -g) -v $PWD:/app lektor-docker-alpine:latest bash
 ```
 
